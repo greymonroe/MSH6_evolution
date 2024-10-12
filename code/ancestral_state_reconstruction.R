@@ -10,14 +10,14 @@ library(phytools)
 
 msh6_good<-fread("tables/S1_msh6_domains_annotated.csv")
 
-tree_time<-read.tree("files/species_for_tree2.nwk") #from http://www.timetree.org/
+tree_time<-read.tree("files/time_tree_may4.nwk") #from http://www.timetree.org/ # crated May 4, 2024
 tree_time$tip.label<-gsub("_"," ",tree_time$tip.label)
 tree_time <- multi2di(tree_time)
 tree_time$edge.length <- tree_time$edge.length + 1e-5
 
 tree_time_sub <- drop.tip(tree_time, setdiff(tree_time$tip.label, msh6_good$Organism))
 
-# pdf("~/Documents/time_tree.pdf", width=6.3, height=6.3)
+# pdf("Figures/time_tree.pdf", width=6.3, height=6.3)
 #
 # p1<-ggtree(tree_time_sub, size = 0.1, layout = "daylight", color="gray80")+
 #   theme(plot.background = element_rect(fill = "transparent"),
@@ -118,7 +118,7 @@ p4
 dev.off()
 
 
-# pdf("~/Documents/time_tree.pdf", width=6.3, height=6.3)
+# pdf("Figures/time_tree.pdf", width=6.3, height=6.3)
 #
 # p1<-ggtree(as.treedata(z), size = 0.1, layout = "daylight", color="gray80")+
 #   theme(plot.background = element_rect(fill = "transparent"),
@@ -149,7 +149,7 @@ dev.off()
 # dev.off()
 
 
-pdf("~/Documents/ancestralstate.pdf", width=6.3, height=6.3)
+pdf("Figures/ancestralstate.pdf", width=6.3, height=6.3)
 
 x<-msh6_good[Organism %in% tree_time$tip.label]$tip=="Tudor"
 names(x)<-msh6_good[Organism %in% tree_time$tip.label]$Organism
@@ -197,7 +197,7 @@ plot_ancestral_states<-function(x, colors=c("gray", "orange")){
   message(paste("ER",aic_value))
 }
 
-pdf("figures/ancestralstate_piecharts.pdf", width=7, height=7)
+pdf("Figures/ancestralstate_piecharts.pdf", width=7, height=7)
 
 tree<-tree_time
 x<-msh6_good[Organism %in% tree_time$tip.label]$tip
@@ -295,68 +295,19 @@ plot_ancestral_trait<-function(trait){
 # dev.off()
 
 pdf("Figures/mean_exon_number_tree_plot.pdf", width=1.75, height=1.75)
-  #trait_data$mean_exon_number
   plots<-plot_ancestral_trait("mean_exon_number")
   lapply(plots, plot)
 dev.off()
 
 pdf("Figures/mean_CDS_length_tree_plot.pdf", width=3, height=3)
-#trait_data$mean_exon_number
 plots<-plot_ancestral_trait("mean_CDS_length")
 lapply(plots, plot)
 dev.off()
 
-
 pdf("Figures/mean_intron_length_tree_plot.pdf", width=3, height=3)
-#trait_data$mean_exon_number
 plots<-plot_ancestral_trait("mean_intron_length")
 lapply(plots, plot)
 dev.off()
-
-
-ggplot(trait_data,aes(x=mean_CDS_length, y=mean_intron_length))+
-  geom_point()+
-  scale_y_log10(breaks=(0:100)*146)+
-  scale_x_log10(breaks=(0:100)*146)+
-  theme(panel.grid.minor = element_blank())
-
-ggplot(trait_data,aes(x=mean_CDS_length, y=mean_total_CDS_length, col=mean_exon_number))+
-  geom_point()+
-  scale_y_log10(breaks=(0:100)*146)+
-  scale_x_log10(breaks=(0:100)*146)+
-  theme(panel.grid.minor = element_blank())
-
-ggplot(trait_data,aes(x=mean_CDS_length, y=mean_intron_length, col=tip))+
-  geom_point(alpha=0.5, shape=3)+
-  scale_y_log10(breaks=c(0, 1, 2, 5, 10, 100, 1000)*146, labels=c(0, 1, 2, 5, 10, 100, 1000), name="Mean intron length (in 146 units)")+
-  scale_x_log10(breaks=(0:100)*146, labels=0:100, name="Mean exon length (in 146 units)")+
-  theme_bw()+
-  theme(panel.grid.minor = element_blank())+
-  scale_color_manual(values =c(PWWP="orange2", Tudor='green3', None='gray'), name="MSH6 Reader")
-
-
-
-ggplot(trait_data,aes(x=mean_CDS_length, y=mean_intron_length))+
-  geom_density_2d()+
-  scale_y_log10(breaks=(0:100)*146)+
-  scale_x_log10(breaks=(0:100)*146)+
-  theme_bw()+
-  theme(panel.grid.minor = element_blank())+
- # scale_color_manual(values =c(PWWP="orange2", Tudor='green3', None='gray'))+
-  facet_grid(~tip)
-
-ggplot(trait_data,aes(x=mean_CDS_length, y=mean_intron_length, col=tip))+
-  geom_point(alpha=0.25)+
-  scale_y_log10(breaks=(0:1000)*146, labels=NULL)+
-  scale_x_log10(breaks=(0:100)*146, labels=0:100)+
-  theme_bw()+
-  theme(panel.grid.minor = element_blank())+
-  scale_color_manual(values =c(PWWP="orange2", Tudor='green3', None='gray'))+
-  facet_grid(Metazoa~tip)
-
-
-
-
 
 pdf("Figures/mean_exon_number_log10_binaryPGLMM.pdf", width=1.5, height=1.5)
 

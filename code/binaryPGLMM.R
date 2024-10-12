@@ -1,7 +1,6 @@
 
 # functions and libraries -------------------------------------------------
 
-
 library(polymorphology2)
 library(ape)
 library(phylolm)
@@ -48,7 +47,6 @@ reader_specific_phylolm_pgls<-function(trait_data, cols, tree_time){
   }))
   return(phylolm_results)
 }
-
 
 run_pgls<-function(trait_data, cols, tree_time){
 
@@ -152,7 +150,6 @@ phylocompare2_coefs<-function(out, p){
 
 
 # analyses ----------------------------------------------------------------
-
 
 col_labels<-c(pct_intron_genic="% Intron (gene)",
               pctnongenic="% nonCDS (genome)",
