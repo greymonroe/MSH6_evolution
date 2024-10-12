@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 *Rproj
+data/Human.gff
+data/Arabidopsis.gff
+local.R
