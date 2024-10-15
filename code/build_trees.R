@@ -1,7 +1,11 @@
 # Create a  tree
 
-tree<-read.tree("files/phyloT_generated_tree_Aug12_23.txt")
+library(ape)
+library(data.table)
+library(ggtree)
+tree<-read.tree("data/phyloT_generated_tree_Aug12_23.txt") # NCBI Taxonomy
 tree$tip.label<-gsub("_"," ",tree$tip.label)
+msh6_good<-fread("tables/S1_msh6_domains_annotated.csv")
 tree<-drop.tip(tree, tree$tip.label[!tree$tip.label %in% msh6_good$Organism])
 x <- as_tibble(tree)
 x$pwwp<-sapply(x$label, function(n){

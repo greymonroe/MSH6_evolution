@@ -10,7 +10,7 @@ library(phytools)
 
 msh6_good<-fread("tables/S1_msh6_domains_annotated.csv")
 
-tree_time<-read.tree("files/time_tree_may4.nwk") #from http://www.timetree.org/ # crated May 4, 2024
+tree_time<-read.tree("files/time_tree_may4.nwk") #from http://www.timetree.org/ # created May 4, 2024
 tree_time$tip.label<-gsub("_"," ",tree_time$tip.label)
 tree_time <- multi2di(tree_time)
 tree_time$edge.length <- tree_time$edge.length + 1e-5
@@ -165,14 +165,6 @@ plot(XX, type = "fan", lwd=0.25,fsize=.1,outline=FALSE, plot=F)
 dev.off()
 
 
-# #http://blog.phytools.org/2023/06/decommissioning-rerootingmethod-and.html
-# x<-msh6_good[Organism %in% tree_time$tip.label]$tip
-# names(x)<-msh6_good[Organism %in% tree_time$tip.label]$Organism
-# testtree<-drop.tip(tree, tree$tip.label[!tree$tip.label %in% names(x)])
-# fitER <- rerootingMethod(testtree, x, model = "ER")
-#
-# fitace<-ace(x,testtree,type="discrete",model="ER")
-# fitace$lik.anc
 
 plot_ancestral_states<-function(x, colors=c("gray", "orange")){
   names(x)<-msh6_good[Organism %in% tree_time$tip.label]$Organism

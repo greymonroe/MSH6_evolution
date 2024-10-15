@@ -217,7 +217,6 @@ glm_plot_data<-rbind(glm_plot_data, pgls_plotdata, fill=T)
 
 glm_plot_data$group2<-ifelse(grepl("rank", glm_plot_data$test),"Rank","log10")
 glm_plot_data$group3<-glm_plot_data$predictor %in% cols[1:18]
-#glm_plot_data$gini<-importance$MeanDecreaseGini[match(glm_plot_data$predictor, importance$col)]
 glm_plot_data_ordering<-glm_plot_data[group2=="Rank" & group=="GLM"][order(pval, decreasing = T)]
 glm_plot_data$predictor<-factor(glm_plot_data$predictor, levels=glm_plot_data_ordering$predictor)
 glm_plot_data$pval[-log10(glm_plot_data$pval)==Inf]<-1e-300

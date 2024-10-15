@@ -1,13 +1,11 @@
-# tol_reader_repair
+# MSH6 Evolution
 
-The `tol_reader_repair` repository is dedicated to the analysis and annotation of the MSH6 protein and its associated domains. This repository provides a comprehensive workflow to identify MSH6 orthologs, predict potential reader domains, and annotate these proteins based on various bioinformatics tools and databases.
+The `MSH6 Evolution` repository contains code dedicated to the analysis and annotation of the MSH6 protein and its associated domains across the tree of life. This repository provides a  workflow to identify MSH6 orthologs, predict potential reader domains, and annotate these proteins based on various bioinformatics tools and databases.
 
 ## Table of Contents
 - [Overview](#overview)
 - [Purpose](#purpose)
-- [Install interproscan](#install-interproscan)
 - [Scripts and Functions](#scripts-and-functions)
-- [To-Do List](#to-do-list)
 - [Results Directory Structure](#results-directory-structure)
 
 ## Overview
@@ -15,7 +13,7 @@ The `tol_reader_repair` repository is dedicated to the analysis and annotation o
 - **Environment Setup**: Utilizes a Conda environment to ensure reproducibility and consistency across different setups.
   
   ```bash
-  conda env create -f tol_reader_repair.yml
+  conda env create -f env.yml
   conda activate tol_reader_repair
   ```
 
@@ -23,110 +21,20 @@ The `tol_reader_repair` repository is dedicated to the analysis and annotation o
   
   [Installation Guide](https://interproscan-docs.readthedocs.io/en/latest/UserDocs.html)
 
-- **Scripts & Functions**: Contains a collection of scripts and functions, housed under `code/commands.sh`, that automate tasks such as:
-  - Cloning the GitHub repository.
+- **Scripts & Functions**: Contains a collection of scripts and functions, housed under `code/`, that for tasks such as:
   - Building the necessary directory structure.
   - Downloading and preparing reference genomes.
   - Identifying MSH6 orthologs.
   - Annotating proteins with InterProScan.
   - Parsing results from various bioinformatics tools.
 
-- **To-Do List**: Outlines future enhancements and tasks to be completed. (Refer to the To-Do section below)
-
 - **Results Directory Structure**: Describes the organization and content of the `results/` directory, which houses the output from various analyses. (Refer to the Results Directory Structure section below)
 
 ## Purpose
 
-The primary objective of this repository is to discover and annotate histone reader domains MSH6 orthologs and other repair proteins across different species. The workflow integrates BLAST searches, domain prediction, and annotation processes to provide a comprehensive overview of MSH6, other repair proteins, and their domains. 
+The primary objective of this repository is to discover and annotate histone reader domains MSH6 orthologs and other repair proteins across different species. The workflow integrates BLAST searches, domain prediction, and annotation of MSH6, other mismatch repair proteins, and their domains. Downstream analyses include measuring sequence conservation of amino acid in histone readers, and phloygenetic contrasts between species with/without histone reader MSH6 fusions.
 
-
-## Install interproscan
-from: [https://interproscan-docs.readthedocs.io/en/latest/UserDocs.html]
-
-```
-mkdir my_interproscan
-cd my_interproscan
-wget https://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.63-95.0/interproscan-5.63-95.0-64-bit.tar.gz
-wget https://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.63-95.0/interproscan-5.63-95.0-64-bit.tar.gz.md5
-
-# Recommended checksum to confirm the download was successful:
-md5sum -c interproscan-5.63-95.0-64-bit.tar.gz.md5
-# Must return *interproscan-5.63-95.0-64-bit.tar.gz: OK*
-# If not - try downloading the file again as it may be a corrupted copy.
-```
-
-```
-tar -pxvzf interproscan-5.63-95.0-*-bit.tar.gz
-
-# where:
-#     p = preserve the file permissions
-#     x = extract files from an archive
-#     v = verbosely list the files processed
-#     z = filter the archive through gzip
-#     f = use archive file
-```
-
-```
-python3 setup.py -f interproscan.properties
-```
-
-```
-nano ~/.bashrc #depending on system
-export PATH=$PATH:/path/to/my_interproscan/interproscan-5.63-95.0/ #replace /path/to/ 
-source ~/.bashrc #depending on system
-```
-
-## scripts and functions
-see code/commands.sh
-
-
-# To-Do List
-
-### Coming Soon:
-
-- [ ] Ensure the best human genome is used as reference?
-- [ ] Add yeast MSH6 to improve orthology prediction?
-- [ ] Research other orthology prediction methods to double check (diamond, orthofinder)?
-- [ ] Extract domain `.faa` sequences for Tudor and PWWP orthologs.
-    - [ ] results/tudor_fastas
-    - [ ] results/PWWP_fastas
-- [ ] Analyze MSH6 tudor and PWWP domains:
-    - [ ] Amino acid alignment and conservation score across sites, compare to structure, binding domains
-    - [ ] Identify outliers (domains with diverged binding domains)
-    - [ ] Structure (alphafold or EM Fold)
-    - [ ] predict Histone PTM binding affinity with FlexPepDock
-- [ ] Retain and compress `genome.gff` and `protein.faa` for each species for future analyes
-- [ ] Analyze `genome.gff` and `protein.faa` for each species.
-    - [ ] Calculate % genome CDS. (unique basepairs annotated as CDS)
-    - [ ] Calculate # exons per protein gene. (number exons per model)
-    - [ ] Calculate protein gene lengths. (length of gene models)
-    - [ ] Calculate GCcontent for different regions
-    - [ ] trinucleotide frequencies by coding, non coding
-        - [ ] results/gene_content.txt (GC (Accession), Organism, total_CDS_length, mean_CDS_length, sd_CDS_length, mean_exons, sd_exons, GC_content_exons, GC_content_non_exons)
-        - [ ] results/trinucleotide_coding.txt (GC (Accession), trinucleotide)
-        - [ ] results/trinucleotide_noncoding.txt (GC (Accession), trinucleotide)
-- [ ] Log files to track species dropped due to annotation errors.
-- [ ] Convert A. thaliana names from `gff`.
-- [ ] Add analyses of other epigenome-recruited repair systems:
-    - [ ] PDS5
-    - [ ] ZCWPW1
-    - [ ] LEDGF/p7
-- [ ] Remove unused code.
-- [ ] Final tables:
-    - [ ] Proteins - Annotated MSH6 orthologs.
-    - [ ] Organisms - NCBI + used or not + MSH6 status orthology + evidence for domain.
-- [ ] Improve `readme.md`:
-    - [ ] Describe the code/scripts in better detail, especially upstream steps so this can be used more generally by us and others to study orthologs, domains, etc.
-    - [ ] Retain cds.fasta for all organisms. Calculate Dn and Ds: do proteins in species without readers evolve faster? https://drostlab.github.io/orthologr/ TimeTree to control for rate... maybe collaborator could help...
-### Future:
-- [ ] Interproscan all organism proteomes to find new mechanisms
-
-
-# `results/` Directory Structure
-
-This directory contains the results of various BLAST and annotation processes related to the MSH6 protein and its domains.
-
-## Files:
+## Notable `data` Files:
 
 - **`MSH6_arabidopsis_rev_blastp_all.txt`**: Reverse BLASTp results for Arabidopsis MSH6.
 - **`MSH6_human_rev_blastp_all.txt`**: Reverse BLASTp results for human MSH6.
@@ -138,7 +46,11 @@ This directory contains the results of various BLAST and annotation processes re
 - **`pwwp_rev_blastp.csv`**: Top hits from blasting PWWP containing proteins against the human genome for each organism.
 - **`tudor_rev_blastp.csv`**: Top hits from blasting Tudor containing proteins against the A. thaliana genome for each organism.
 
-## Subdirectories:
+# `setup_run.sh` Directory Structure
+
+`setup_run.sh` makes directory structure and runs MSH6 orthology search. Creates `results/` which contains the outputs of various BLAST and annotation processes related to the MSH6 protein and its domains. 
+
+## Subdirectories of `results/` created
 
 ### `blastp`
 Contains BLASTp results organized by NCBI accession. Each accession directory has subdirectories for different BLASTp queries (e.g., `arabidopsis_msh6`). Inside these, you'll find:

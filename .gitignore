@@ -7,3 +7,4 @@ data/Human.gff
 data/Arabidopsis.gff
 local.R
 .DS_Store
+README.html
