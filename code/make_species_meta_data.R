@@ -45,24 +45,24 @@ ncbi_sub_summary$nongenic<-ncbi_sub_summary$Genome_size-ncbi_sub_summary$CDS_gen
 ncbi_sub_summary$pctnongenic<-ncbi_sub_summary$nongenic/ncbi_sub_summary$Genome_size
 ncbi_sub_summary$codingnoncoding<-ncbi_sub_summary$CDS_genome_total/ncbi_sub_summary$nongenic
 
-age<-fread("~/Documents/dataset/anage_data.txt")
+age<-fread("data/anage_data.txt")
 age$Organism<-paste(age$Genus, age$Species)
 ncbi_sub_summary$longevity<-age$`Maximum longevity (yrs)`[match(ncbi_sub_summary$Organism, age$Organism)]
 
-mutation<-fread("~/Documents/mutation_rate_literature_updating3.csv")
+mutation<-fread("data/mutation_rate_literature_updating3.csv")
 mutation$Organism<-mutation$Species
 snps<-mutation[TYPE=="snp", .(u=mean(u_mean)), by=Organism]
 indels<-mutation[TYPE=="indel", .(u=mean(u_mean)), by=Organism]
 ncbi_sub_summary$snp_u<-snps$u[match(ncbi_sub_summary$Organism, snps$Organism)]
 ncbi_sub_summary$indel_u<-indels$u[match(ncbi_sub_summary$Organism, indels$Organism)]
 
-pop<-fread("~/Documents/combined_data.tsv")
+pop<-fread("data/Buffalo_combined_data.tsv")
 pop$Organism<-pop$species
 ncbi_sub_summary$body_mass<-10^pop$pred_log10_body_mass[match(ncbi_sub_summary$Organism, pop$Organism)]
 ncbi_sub_summary$Ne<-10^pop$pred_log10_N[match(ncbi_sub_summary$Organism, pop$Organism)]
 
 #confirming concordance of assembly size with C-value
-Marino_table1<-fread("local_data/Marino_TableS1.tsv")
+Marino_table1<-fread("data/Marino_TableS1.tsv")
 cor.test(log10(Marino_table1$Cvalue), log10(Marino_table1$Assembly_size))
 
 # Fetch the organisms in each node

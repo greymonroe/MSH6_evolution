@@ -54,3 +54,5 @@ check_tblastn <- function(GC, domainQ, proteinQ) {
 
   return(proteinQ_tblastn)
 }
+
+#MSH6 evolution project

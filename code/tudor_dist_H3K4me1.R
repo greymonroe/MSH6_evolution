@@ -1,9 +1,9 @@
 
 
-### code for tudor domain pdb update to make general for PWWP too
+### code for tudor domain pdb
 library(bio3d)
 library(data.table)
-pdb <- read.pdb("files/structures/AF-O04716-F1-model_v4.pdb")
+pdb <- read.pdb("data/structures/AF-O04716-F1-model_v4.pdb")
 atoms<-data.table(pdb$atom)
 tudor<-atoms[resno>115 & resno < 179]
 dist_matrix <- dist(tudor[,.(x,y,z)])
@@ -22,7 +22,7 @@ contacts_POS_conservation<-merge(tudor_conservation, contacts_POS, by.y="POS_pdb
 contacts_POS_conservation_contacts<-contacts_POS_conservation
 
 
-pdb <- read.pdb("files/structures/pdb7de9.ent")
+pdb <- read.pdb("data/structures/pdb7de9.ent")
 
 atoms<-data.table(pdb$atom)[resid!="HOH"]
 dist_matrix <- dist(atoms[,.(x,y,z)])
@@ -49,44 +49,38 @@ contacts_POS_conservation$cage<-contacts_POS_conservation$MSH6_POS_AA %in% c("61
 contacts_POS_conservation$other_contacts<-contacts_POS_conservation_contacts$contacts[match(contacts_POS_conservation$POS, contacts_POS_conservation_contacts$POS)]
 
 contacts_POS_conservation$other_contacts_min_dist<-contacts_POS_conservation_contacts$min_dist[match(contacts_POS_conservation$POS, contacts_POS_conservation_contacts$POS)]
-
-model<-lm(entropy~other_contacts+min_dist, contacts_POS_conservation)
-anova(model)
 contacts_POS_conservation$Property<-factor(contacts_POS_conservation$Property)
+
 fwrite(contacts_POS_conservation[,.(POS, consensus, entropy, min_dist)], "tables/tudor_contacts_POS_conservation.csv")
 
 shapes <- c("Aro-\nmatic" = 7, "Neg" = 6, "Non-polar\naliphatic" = 21, "Polar\nuncharged" = 14, "Pos" = 3)
 
-View(contacts_POS_conservation[,.(refAA, MSH6_POS, POS)])
-
 # prepare pdb for distance plotting ---------------------------------------
-combined_pdb<-read.pdb("files/structures/pdb7de9.ent", ATOM.only=T)
+combined_pdb<-read.pdb("data/structures/pdb7de9.ent", ATOM.only=T)
 contacts_POS_conservation$ID<-paste(contacts_POS_conservation$POS, "A")
 combined_pdb$atom$ID<-paste(combined_pdb$atom$resno-600, combined_pdb$atom$chain)
 combined_pdb$atom$b<-contacts_POS_conservation$entropy[match(combined_pdb$atom$ID, contacts_POS_conservation$ID)]
 combined_pdb$atom$b[is.na(combined_pdb$atom$b)]<-0
 
-write.pdb(combined_pdb, file="files/structures/Tudor_H3K4me1_combined_structure_annot.pdb")
+write.pdb(combined_pdb, file="data/structures/Tudor_H3K4me1_combined_structure_annot.pdb")
 
 
-combined_pdb<-read.pdb("files/structures/pdb7de9.ent", ATOM.only=T)
+combined_pdb<-read.pdb("data/structures/pdb7de9.ent", ATOM.only=T)
 contacts_POS_conservation$ID<-paste(contacts_POS_conservation$POS, "A")
 combined_pdb$atom$ID<-paste(combined_pdb$atom$resno-600, combined_pdb$atom$chain)
 combined_pdb$atom$b<-contacts_POS_conservation$min_dist[match(combined_pdb$atom$ID, contacts_POS_conservation$ID)]
 combined_pdb$atom$b[is.na(combined_pdb$atom$b)]<-0
 
-write.pdb(combined_pdb, file="files/structures/Tudor_H3K4me1_combined_structure_annot_dist.pdb")
+write.pdb(combined_pdb, file="data/structures/Tudor_H3K4me1_combined_structure_annot_dist.pdb")
 
 
 
-pdf("~/Documents/Tudor_dist_constraint.pdf", width=1.5, height=1.5)
+pdf("Figures/Tudor_dist_constraint.pdf", width=1.5, height=1.5)
 ggplot(contacts_POS_conservation, aes(y=entropy, x=min_dist, shape=Property, group=1))+
   geom_smooth(method="lm", col="green4")+
   geom_point()+
   scale_shape_manual(values = shapes) +
 
-  #geom_point(data=contacts_POS_conservation, col="orange2", size=3, shape=21)+
-  #geom_label_repel(data=contacts_POS_conservation[cage==TRUE], aes(label=consensus), col="green4", size=2)+
   theme_classic(base_size = 6)+
   theme(
     legend.position = "none",
@@ -97,10 +91,7 @@ ggplot(contacts_POS_conservation, aes(y=entropy, x=min_dist, shape=Property, gro
   geom_smooth(method="lm", col="green4")+
   geom_point()+
   scale_shape_manual(values = shapes) +
-
-  #geom_point(data=contacts_POS_conservation, col="orange2", size=3, shape=21)+
-  #geom_label_repel(data=contacts_POS_conservation[cage==TRUE], aes(label=consensus), col="green4", size=2)+
-  theme_classic(base_size = 6)+
+ theme_classic(base_size = 6)+
   theme(
     panel.background = element_blank(),
     plot.background = element_blank())
@@ -108,7 +99,7 @@ dev.off()
 
 
 cor.test(contacts_POS_conservation$min_dist, contacts_POS_conservation$entropy)
-pdf("~/Documents/tudor_histone_dist_AA.pdf", width=4, height=.75)
+pdf("Figures/tudor_histone_dist_AA.pdf", width=4, height=.75)
 highcol="green4"
 p <- ggplot(contacts_POS_conservation, aes(x=POS, y=min_dist, col=scale(Property_cons), fill=scale(Property_cons), label=consensus)) +
   geom_text(fontface = "bold", aes(y=-1), size=1.5) +

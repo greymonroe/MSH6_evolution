@@ -80,3 +80,5 @@ annotate_domain <- function(GC, protein, Q, proteinQ, interproscan_domain) {
   evidence
   return(evidence)
 }
+#MSH6 evolution project
+

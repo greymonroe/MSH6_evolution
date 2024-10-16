@@ -1,3 +1,4 @@
+#MSH6 evolution project
 
 source("github/code/libraries_functions.R")
 
@@ -76,9 +77,6 @@ colnames(GCs)[1]<-"GC"
 # GCs$Tudortblastn<-sapply(GCs$V1, function(GC){
 #   dist<-min(check_tblastn(GC, "arabidopsis_msh6_tudor", proteinQ = "arabidopsis_msh6")$dist_to_domain)
 # })
-
-
-
 
 fwrite(predicted_msh6, "results/predicted_msh6_blast_annotated.txt", sep=" ")
 msh6<-make_MSH6_organism_table("results/predicted_msh6_blast_annotated.txt", 10000)

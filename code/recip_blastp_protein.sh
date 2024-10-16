@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#MSH6 evolution project
+
 GC1=$1
 GC2=$2
 Q=$3
@@ -34,7 +36,7 @@ awk '{print $2}' results/blastp/$GC2/$BASENAMEQ/blastp_results.txt > results/bla
 
 # Loop over top hits and BLAST against species 1 proteome
 while read -r TOP_HIT; do
-    
+
     grep $TOP_HIT data/genomes/${GC2}/genomic.gff > results/blastp/$GC2/$BASENAMEQ/gff/${TOP_HIT}.gff
 
     # Extract the sequence
@@ -42,6 +44,6 @@ while read -r TOP_HIT; do
 
     # BLAST against species 1 proteome
     blastp -query results/blastp/$GC2/$BASENAMEQ/proteins/${TOP_HIT}.fasta -db $DB1 -evalue 1e-5 -outfmt 6 > results/blastp/$GC2/$BASENAMEQ/rev_blastp/${TOP_HIT}.txt
-    
+
 done < results/blastp/$GC2/$BASENAMEQ/top_hits_ids.txt
 

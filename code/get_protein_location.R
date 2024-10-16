@@ -21,3 +21,5 @@ get_protein_location<-function(file){
   location=data.table(CHROM=unique(gff$CHROM), START=min(gff$START), STOP=max(gff$STOP), INFO=file)
   return(location)
 }
+
+#MSH6 evolution project

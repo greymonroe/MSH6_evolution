@@ -1,9 +1,9 @@
-#!/bin/bash -l 
+#!/bin/bash -l
 
 ################################################################################
 # Script Name: download_ncbi.sh
-# Description: This script downloads specific file types for a given genome 
-#              accession (GC value) from the NCBI database. After downloading, 
+# Description: This script downloads specific file types for a given genome
+#              accession (GC value) from the NCBI database. After downloading,
 #              BLAST databases are generated for the protein and genomic sequences.
 #
 # File Types Downloaded from NCBI:
@@ -20,7 +20,7 @@
 #     - None (Files are downloaded from NCBI)
 #
 #   Output:
-#     - Genomic and protein sequences, annotations, and BLAST databases are 
+#     - Genomic and protein sequences, annotations, and BLAST databases are
 #       stored in: data/genomes/[GC_VALUE]/
 #
 # Usage:
@@ -37,6 +37,7 @@
 #   - If the download or unzip operations fail, the script will retry until successful.
 #   - The script activates the 'tol_reader_repair' conda environment for operations.
 ################################################################################
+#MSH6 evolution project
 
 
 conda activate tol_reader_repair
@@ -60,7 +61,7 @@ SUCCESS=false
 # Keep trying until we've downloaded a successful zip file
 until $SUCCESS; do
 
-    
+
 while ! curl --speed-time 30 --speed-limit 12500 -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v1/genome/accession/${GC}/download?include_annotation_type=PROT_FASTA&include_annotation_type=GENOME_FASTA&include_annotation_type=GENOME_GFF&filename=${GC}.zip" -H "Accept: application/zip"; do
     echo "Retrying download..."
     rm *

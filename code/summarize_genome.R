@@ -3,8 +3,8 @@ library(data.table)
 library(seqinr)
 
 # Source the required functions
-source("~/projects/tol_reader_repair/github/code/summarize_gff.R")
-source("~/projects/tol_reader_repair/github/code/summarize_amino_acids.R")
+source("code/summarize_gff.R")
+source("code/summarize_amino_acids.R")
 
 # Capture command line arguments
 args <- commandArgs(trailingOnly = TRUE)

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#MSH6 evolution project
+
 GC=$1
 Q=$2
 

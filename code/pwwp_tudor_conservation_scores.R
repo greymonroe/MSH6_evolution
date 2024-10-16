@@ -1,5 +1,4 @@
 library(polymorphology2)
-#system("scp gmonroe@farm.cse.ucdavis.edu:~/projects/tol_reader_repair/results/Muscle* ~/Documents")
 
 # Function to plot conservation scores
 plot_conservation <- function(file_path, highcol) {
@@ -125,9 +124,9 @@ plot_conservation <- function(file_path, highcol) {
   return(conservation_scores)
 }
 
-pdf("~/Documents/msh6_domains_consevation.pdf", width=5, height=1)
-tudor_conservation<-plot_conservation(paste0("~/Documents/", "Muscle", "_msh6_tudors_conservation.csv"), highcol="green4")
-pwwp_conservation<-plot_conservation(file_path = paste0("~/Documents/", "Muscle", "_msh6_pwwps_conservation.csv"), highcol="purple")
+pdf("Figures/msh6_domains_consevation.pdf", width=5, height=1)
+tudor_conservation<-plot_conservation(paste0("data/", "Muscle", "_msh6_tudors_conservation.csv"), highcol="green4")
+pwwp_conservation<-plot_conservation(file_path = paste0("data/", "Muscle", "_msh6_pwwps_conservation.csv"), highcol="purple")
 dev.off()
 
 fwrite(tudor_conservation,"tables/tudor_conservation.csv")
@@ -135,7 +134,7 @@ fwrite(pwwp_conservation,"tables/pwwp_conservation.csv")
 
 
 ### see plot_conservation() for making AA_freq_melt
-pdf("~/Documents/msh6_domains_consevation_matrix.pdf", width=5, height=2)
+pdf("Figures/msh6_domains_consevation_matrix.pdf", width=5, height=2)
 ggplot(AA_freq_melt[variable!="X"], aes(x=POS, y=variable, fill=property, alpha=value))+
   #scale_fill_gradient(low='white', high=highcol)+
   geom_vline(xintercept = 1:max(AA_freq_melt$POS), linewidth=0.1, col="gray")+
