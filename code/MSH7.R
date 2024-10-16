@@ -46,7 +46,7 @@ d<-x %>% select(label, MSH7, N)
 z <- left_join(y, unique(d), by = 'label')
 
 
-
+pdf("Figures/MSH6_trees_daylight_new.pdf", width=3.5, height=3.5)
 # Plot the pruned tree (your plot commands)
 p1 <- ggtree(as.treedata(z), size = 0.1, layout = "circular", color="gray90") +
   theme(plot.background = element_rect(fill = "transparent"),
@@ -61,6 +61,7 @@ ggdraw() +
   draw_plot(p1) +
   draw_plot(p2)
 
+dev.off()
 z_dt<-data.table(z)
 
 z_dt$MSH7_pct<-z_dt$MSH7/z_dt$N
@@ -79,4 +80,6 @@ top<-z_dt[1:10,]
 z_dt[label=="Metazoa"]
 z_dt[label=="Fungi"]
 z_dt[label=="Sar"]
-z_dt[label=="Stramenopiles"]
+z_dt[label=="Viridiplantae"]
+
+head(z_dt, 20)
