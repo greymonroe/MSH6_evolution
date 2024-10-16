@@ -65,21 +65,9 @@ dev.off()
 z_dt<-data.table(z)
 
 z_dt$MSH7_pct<-z_dt$MSH7/z_dt$N
-z_dt$MSH7_pct_grp<-as.numeric(cut(z_dt$MSH7_pct, breaks = 10))
-
-
-ggplot(z_dt[MSH7_pct>0.75 & N>1], aes(x=(N), y=(MSH7_pct)))+
-  geom_label(aes(label=label), size=2)
-
-
-z_dt<-z_dt[order(MSH7_pct_grp, N, decreasing = T)]
-z_dt$rank<-1:nrow(z_dt)
-
-top<-z_dt[1:10,]
 
 z_dt[label=="Metazoa"]
 z_dt[label=="Fungi"]
 z_dt[label=="Sar"]
 z_dt[label=="Viridiplantae"]
 
-head(z_dt, 20)
