@@ -2,6 +2,13 @@
 
 The `MSH6 Evolution` repository contains code dedicated to the analysis and annotation of the MSH6 protein and its associated domains across the tree of life. This repository provides a  workflow to identify MSH6 orthologs, predict potential reader domains, and annotate these proteins based on various bioinformatics tools and databases.
 
+> **Revision analyses (2026)** — the exon-cassette architecture and Protostome
+> co-evolution analyses added during revision live in
+> [`code/revision_2026/`](code/revision_2026/), with their result tables in
+> `data/revision_2026/`. See [`code/revision_2026/README.md`](code/revision_2026/README.md);
+> it includes a correction note for the Protostome GO enrichment that should be read
+> before using those numbers.
+
 ## Table of Contents
 - [Overview](#overview)
 - [Purpose](#purpose)

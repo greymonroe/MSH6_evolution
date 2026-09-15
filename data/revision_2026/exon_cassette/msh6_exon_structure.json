@@ -1,0 +1,671 @@
+[
+  {
+    "species": "Arabidopsis thaliana",
+    "error": "gene lookup failed"
+  },
+  {
+    "species": "Oryza sativa",
+    "error": "gene lookup failed"
+  },
+  {
+    "species": "Zea mays",
+    "error": "gene lookup failed"
+  },
+  {
+    "species": "Brachypodium distachyon",
+    "error": "gene lookup failed"
+  },
+  {
+    "species": "Populus trichocarpa",
+    "error": "gene lookup failed"
+  },
+  {
+    "species": "Vitis vinifera",
+    "error": "gene lookup failed"
+  },
+  {
+    "species": "Homo sapiens",
+    "domain": "PWWP",
+    "group": "metazoa",
+    "gene_id": "ENSG00000116062",
+    "display_name": "MSH6",
+    "transcript_id": "ENST00000234420",
+    "protein_id": "ENSP00000234420",
+    "protein_length": 1360,
+    "strand": 1,
+    "n_exons_total": 10,
+    "n_coding_exons": 10,
+    "coding_exons": [
+      {
+        "exon_start": 47783145,
+        "exon_end": 47783493,
+        "exon_length_nt": 349,
+        "coding_nt": 260,
+        "protein_start": 1,
+        "protein_end": 87,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47790927,
+        "exon_end": 47791123,
+        "exon_length_nt": 197,
+        "coding_nt": 197,
+        "protein_start": 87,
+        "protein_end": 153,
+        "phase": 2,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47795894,
+        "exon_end": 47796063,
+        "exon_length_nt": 170,
+        "coding_nt": 170,
+        "protein_start": 153,
+        "protein_end": 209,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47798611,
+        "exon_end": 47801155,
+        "exon_length_nt": 2545,
+        "coding_nt": 2545,
+        "protein_start": 210,
+        "protein_end": 1058,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47803420,
+        "exon_end": 47803685,
+        "exon_length_nt": 266,
+        "coding_nt": 266,
+        "protein_start": 1058,
+        "protein_end": 1146,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47804910,
+        "exon_end": 47805027,
+        "exon_length_nt": 118,
+        "coding_nt": 118,
+        "protein_start": 1147,
+        "protein_end": 1186,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47805618,
+        "exon_end": 47805707,
+        "exon_length_nt": 90,
+        "coding_nt": 90,
+        "protein_start": 1186,
+        "protein_end": 1216,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47806204,
+        "exon_end": 47806358,
+        "exon_length_nt": 155,
+        "coding_nt": 155,
+        "protein_start": 1216,
+        "protein_end": 1267,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47806452,
+        "exon_end": 47806651,
+        "exon_length_nt": 200,
+        "coding_nt": 200,
+        "protein_start": 1268,
+        "protein_end": 1334,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 47806779,
+        "exon_end": 47806953,
+        "exon_length_nt": 175,
+        "coding_nt": 82,
+        "protein_start": 1334,
+        "protein_end": 1361,
+        "phase": 2,
+        "is_utr": false
+      }
+    ]
+  },
+  {
+    "species": "Mus musculus",
+    "domain": "PWWP",
+    "group": "metazoa",
+    "gene_id": "ENSMUSG00000005370",
+    "display_name": "Msh6",
+    "transcript_id": "ENSMUST00000005503",
+    "protein_id": "ENSMUSP00000005503",
+    "protein_length": 1358,
+    "strand": 1,
+    "n_exons_total": 10,
+    "n_coding_exons": 10,
+    "coding_exons": [
+      {
+        "exon_start": 88282490,
+        "exon_end": 88282833,
+        "exon_length_nt": 344,
+        "coding_nt": 257,
+        "protein_start": 1,
+        "protein_end": 86,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88287619,
+        "exon_end": 88287818,
+        "exon_length_nt": 200,
+        "coding_nt": 200,
+        "protein_start": 86,
+        "protein_end": 153,
+        "phase": 2,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88290873,
+        "exon_end": 88291042,
+        "exon_length_nt": 170,
+        "coding_nt": 170,
+        "protein_start": 153,
+        "protein_end": 209,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88291874,
+        "exon_end": 88294409,
+        "exon_length_nt": 2536,
+        "coding_nt": 2536,
+        "protein_start": 210,
+        "protein_end": 1055,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88295614,
+        "exon_end": 88295882,
+        "exon_length_nt": 269,
+        "coding_nt": 269,
+        "protein_start": 1055,
+        "protein_end": 1144,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88296572,
+        "exon_end": 88296689,
+        "exon_length_nt": 118,
+        "coding_nt": 118,
+        "protein_start": 1145,
+        "protein_end": 1184,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88296855,
+        "exon_end": 88296944,
+        "exon_length_nt": 90,
+        "coding_nt": 90,
+        "protein_start": 1184,
+        "protein_end": 1214,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88297622,
+        "exon_end": 88297776,
+        "exon_length_nt": 155,
+        "coding_nt": 155,
+        "protein_start": 1214,
+        "protein_end": 1265,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88297859,
+        "exon_end": 88298058,
+        "exon_length_nt": 200,
+        "coding_nt": 200,
+        "protein_start": 1266,
+        "protein_end": 1332,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 88298152,
+        "exon_end": 88298320,
+        "exon_length_nt": 169,
+        "coding_nt": 82,
+        "protein_start": 1332,
+        "protein_end": 1359,
+        "phase": 2,
+        "is_utr": false
+      }
+    ]
+  },
+  {
+    "species": "Danio rerio",
+    "domain": "PWWP",
+    "group": "metazoa",
+    "gene_id": "ENSDARG00000104541",
+    "display_name": "msh6",
+    "transcript_id": "ENSDART00000171080",
+    "protein_id": "ENSDARP00000131172",
+    "protein_length": 1369,
+    "strand": 1,
+    "n_exons_total": 10,
+    "n_coding_exons": 10,
+    "coding_exons": [
+      {
+        "exon_start": 48358467,
+        "exon_end": 48358870,
+        "exon_length_nt": 404,
+        "coding_nt": 236,
+        "protein_start": 1,
+        "protein_end": 79,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48361819,
+        "exon_end": 48362024,
+        "exon_length_nt": 206,
+        "coding_nt": 206,
+        "protein_start": 79,
+        "protein_end": 148,
+        "phase": 2,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48364061,
+        "exon_end": 48364236,
+        "exon_length_nt": 176,
+        "coding_nt": 176,
+        "protein_start": 148,
+        "protein_end": 206,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48365894,
+        "exon_end": 48368450,
+        "exon_length_nt": 2557,
+        "coding_nt": 2557,
+        "protein_start": 207,
+        "protein_end": 1059,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48370322,
+        "exon_end": 48370611,
+        "exon_length_nt": 290,
+        "coding_nt": 290,
+        "protein_start": 1059,
+        "protein_end": 1155,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48373116,
+        "exon_end": 48373233,
+        "exon_length_nt": 118,
+        "coding_nt": 118,
+        "protein_start": 1156,
+        "protein_end": 1195,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48373317,
+        "exon_end": 48373406,
+        "exon_length_nt": 90,
+        "coding_nt": 90,
+        "protein_start": 1195,
+        "protein_end": 1225,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48373976,
+        "exon_end": 48374130,
+        "exon_length_nt": 155,
+        "coding_nt": 155,
+        "protein_start": 1225,
+        "protein_end": 1276,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48375495,
+        "exon_end": 48375694,
+        "exon_length_nt": 200,
+        "coding_nt": 200,
+        "protein_start": 1277,
+        "protein_end": 1343,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 48380856,
+        "exon_end": 48381055,
+        "exon_length_nt": 200,
+        "coding_nt": 82,
+        "protein_start": 1343,
+        "protein_end": 1370,
+        "phase": 2,
+        "is_utr": false
+      }
+    ]
+  },
+  {
+    "species": "Gallus gallus",
+    "domain": "PWWP",
+    "group": "metazoa",
+    "gene_id": "ENSGALG00010017746",
+    "display_name": "MSH6",
+    "transcript_id": "ENSGALT00010042897",
+    "protein_id": "ENSGALP00010025387",
+    "protein_length": 1341,
+    "strand": 1,
+    "n_exons_total": 11,
+    "n_coding_exons": 10,
+    "coding_exons": [
+      {
+        "exon_start": 8957693,
+        "exon_end": 8957943,
+        "exon_length_nt": 251,
+        "coding_nt": 197,
+        "protein_start": 1,
+        "protein_end": 66,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8958543,
+        "exon_end": 8958745,
+        "exon_length_nt": 203,
+        "coding_nt": 203,
+        "protein_start": 66,
+        "protein_end": 134,
+        "phase": 2,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8960383,
+        "exon_end": 8960558,
+        "exon_length_nt": 176,
+        "coding_nt": 176,
+        "protein_start": 134,
+        "protein_end": 192,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8961778,
+        "exon_end": 8964316,
+        "exon_length_nt": 2539,
+        "coding_nt": 2539,
+        "protein_start": 193,
+        "protein_end": 1039,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8964499,
+        "exon_end": 8964764,
+        "exon_length_nt": 266,
+        "coding_nt": 266,
+        "protein_start": 1039,
+        "protein_end": 1127,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8965330,
+        "exon_end": 8965447,
+        "exon_length_nt": 118,
+        "coding_nt": 118,
+        "protein_start": 1128,
+        "protein_end": 1167,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8966788,
+        "exon_end": 8966877,
+        "exon_length_nt": 90,
+        "coding_nt": 90,
+        "protein_start": 1167,
+        "protein_end": 1197,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8967455,
+        "exon_end": 8967609,
+        "exon_length_nt": 155,
+        "coding_nt": 155,
+        "protein_start": 1197,
+        "protein_end": 1248,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8967805,
+        "exon_end": 8968004,
+        "exon_length_nt": 200,
+        "coding_nt": 200,
+        "protein_start": 1249,
+        "protein_end": 1315,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 8968431,
+        "exon_end": 8968593,
+        "exon_length_nt": 163,
+        "coding_nt": 82,
+        "protein_start": 1315,
+        "protein_end": 1342,
+        "phase": 2,
+        "is_utr": false
+      }
+    ]
+  },
+  {
+    "species": "Saccharomyces cerevisiae",
+    "domain": "none",
+    "group": "fungi",
+    "gene_id": "YDR097C",
+    "display_name": "MSH6",
+    "transcript_id": "YDR097C_mRNA",
+    "protein_id": "YDR097C",
+    "protein_length": 1242,
+    "strand": -1,
+    "n_exons_total": 1,
+    "n_coding_exons": 1,
+    "coding_exons": [
+      {
+        "exon_start": 640109,
+        "exon_end": 643837,
+        "exon_length_nt": 3729,
+        "coding_nt": 3729,
+        "protein_start": 1,
+        "protein_end": 1243,
+        "phase": 0,
+        "is_utr": false
+      }
+    ]
+  },
+  {
+    "species": "Caenorhabditis elegans",
+    "domain": "none",
+    "group": "metazoa",
+    "gene_id": "WBGene00003422",
+    "display_name": "msh-6",
+    "transcript_id": "Y47G6A.11.1",
+    "protein_id": "Y47G6A.11.1",
+    "protein_length": 1186,
+    "strand": 1,
+    "n_exons_total": 8,
+    "n_coding_exons": 8,
+    "coding_exons": [
+      {
+        "exon_start": 3449326,
+        "exon_end": 3449462,
+        "exon_length_nt": 137,
+        "coding_nt": 136,
+        "protein_start": 1,
+        "protein_end": 46,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3450523,
+        "exon_end": 3450803,
+        "exon_length_nt": 281,
+        "coding_nt": 281,
+        "protein_start": 46,
+        "protein_end": 139,
+        "phase": 1,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3452033,
+        "exon_end": 3452797,
+        "exon_length_nt": 765,
+        "coding_nt": 765,
+        "protein_start": 140,
+        "protein_end": 394,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3455000,
+        "exon_end": 3455805,
+        "exon_length_nt": 806,
+        "coding_nt": 806,
+        "protein_start": 395,
+        "protein_end": 663,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3457107,
+        "exon_end": 3457518,
+        "exon_length_nt": 412,
+        "coding_nt": 412,
+        "protein_start": 663,
+        "protein_end": 800,
+        "phase": 2,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3458517,
+        "exon_end": 3459068,
+        "exon_length_nt": 552,
+        "coding_nt": 552,
+        "protein_start": 801,
+        "protein_end": 984,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3460495,
+        "exon_end": 3460827,
+        "exon_length_nt": 333,
+        "coding_nt": 333,
+        "protein_start": 985,
+        "protein_end": 1095,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 3461797,
+        "exon_end": 3462174,
+        "exon_length_nt": 378,
+        "coding_nt": 276,
+        "protein_start": 1096,
+        "protein_end": 1187,
+        "phase": 0,
+        "is_utr": false
+      }
+    ]
+  },
+  {
+    "species": "Drosophila melanogaster",
+    "domain": "none",
+    "group": "metazoa",
+    "gene_id": "FBgn0036486",
+    "display_name": "Msh6",
+    "transcript_id": "FBtr0075646",
+    "protein_id": "FBpp0075399",
+    "protein_length": 1190,
+    "strand": -1,
+    "n_exons_total": 5,
+    "n_coding_exons": 5,
+    "coding_exons": [
+      {
+        "exon_start": 15157486,
+        "exon_end": 15158562,
+        "exon_length_nt": 1077,
+        "coding_nt": 1002,
+        "protein_start": 1,
+        "protein_end": 334,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 15157098,
+        "exon_end": 15157427,
+        "exon_length_nt": 330,
+        "coding_nt": 330,
+        "protein_start": 335,
+        "protein_end": 444,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 15155426,
+        "exon_end": 15157033,
+        "exon_length_nt": 1608,
+        "coding_nt": 1608,
+        "protein_start": 445,
+        "protein_end": 980,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 15154872,
+        "exon_end": 15155357,
+        "exon_length_nt": 486,
+        "coding_nt": 486,
+        "protein_start": 981,
+        "protein_end": 1142,
+        "phase": 0,
+        "is_utr": false
+      },
+      {
+        "exon_start": 15154233,
+        "exon_end": 15154811,
+        "exon_length_nt": 579,
+        "coding_nt": 147,
+        "protein_start": 1143,
+        "protein_end": 1191,
+        "phase": 0,
+        "is_utr": false
+      }
+    ]
+  }
+]
